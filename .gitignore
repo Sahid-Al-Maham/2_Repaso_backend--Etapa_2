@@ -73,7 +73,7 @@ web_modules/
 .yarn-integrity
 
 # dotenv environment variable files
-.env
+#.env // Comentamos con # para SI enviar en este caso el archivo .env (RECUERDEN descomentar ya que este archivo NO se debe hacer público)
 .env.development.local
 .env.test.local
 .env.production.local
