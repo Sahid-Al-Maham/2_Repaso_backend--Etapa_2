@@ -10,12 +10,12 @@ class FrontServer {
   }
 
   middleware() {
-    this.app.use(express.static(path.join(__dirname, '../Repaso_frontend--Etapa_1')));  // Sirve archivos estáticos del frontend. muestra pagina web del front
+    this.app.use(express.static(path.join(__dirname, '../Repaso_frontend--Etapa_1')));  // Sirve archivos estáticos del frontend, muestra pagina web en localhost:8080
   }
 
   listen() {
     this.app.listen(this.port, () => {
-      console.log(`Frontend servido en http://localhost:${this.port}`); // Mensaje en consola de navegador
+      console.log(`Frontend servido en http://localhost:${this.port}`); // Mensaje en terminal del backend
     });
   }
 

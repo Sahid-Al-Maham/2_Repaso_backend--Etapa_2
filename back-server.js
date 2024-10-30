@@ -18,13 +18,13 @@ class BackServer {
   
     routes() { // Ruta inicial (opcional) para verificar que el servidor está funcionando
       this.app.get('/server', (req, res) => { // Usamos método GET para una consulta simple de prueba en localhost:3000/server
-        res.send('Servidor Repaso_backend en funcionamiento'); // La consulta devuelve este mensaje en este caso
+        res.send('Servidor "Repaso_backend" en funcionamiento'); // La consulta devuelve este mensaje en este caso
       });
     }
   
     listen() { // Levanta el servidor backend
       this.app.listen(this.port, () => {
-        console.log(`Servidor corriendo en http://localhost:${this.port}`); // Mensaje en terminal
+        console.log(`Servidor corriendo en http://localhost:${this.port}`); // Mensaje en terminal backend
       });
     }
 
