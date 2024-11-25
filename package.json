@@ -1,16 +1,20 @@
 {
   "name": "repaso_backend",
   "version": "1.0.0",
+  "type": "module",  
   "main": "app.js",
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
     "dev": "nodemon app.js"
   },
+
   "keywords": [],
   "author": "Sahid Al Maham",
   "license": "ISC",
   "description": "Api independiente",
+
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
@@ -19,4 +23,6 @@
   "devDependencies": {
     "nodemon": "^3.1.7"
   }
+
 }
+

@@ -1,5 +1,5 @@
-const BackServer = require('./back-server');
-const FrontServer = require('./front-server');
+import BackServer from './back-server.js';
+import FrontServer from './front-server.js';
 
 (async()=>{
     await main();

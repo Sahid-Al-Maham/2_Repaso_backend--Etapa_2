@@ -1,7 +1,8 @@
 // Importaciones para el servidor básico
-const express = require('express');          // Framework para crear el servidor y manejar rutas
-const cors = require('cors');                // Middleware para permitir CORS entre backend y frontend (comunicaciones de origen cruzado)
-require('dotenv').config();                  // Permite trabajar y cargar variables de entorno desde el archivo .env
+import express from 'express';          // Framework para crear el servidor y manejar rutas
+import cors from 'cors';                // Middleware para permitir CORS entre backend y frontend (comunicaciones de origen cruzado)
+import dotenv from 'dotenv'     // Permite trabajar y cargar variables de entorno desde el archivo .env
+dotenv.config();  
 
 
 class BackServer {
@@ -14,13 +15,33 @@ class BackServer {
   
     middleware() { // Middleware
       this.app.use(cors());
+      this.app.use('/r_Imagenes', express.static('r_Imagenes'));// Sirve archivos estáticos desde el directorio de imágenes
     }
   
     routes() { // Ruta inicial (opcional) para verificar que el servidor está funcionando
       this.app.get('/server', (req, res) => { // Usamos método GET para una consulta simple de prueba en localhost:3000/server
-        res.send('Servidor "Repaso_backend" en funcionamiento'); // La consulta devuelve este mensaje en este caso
+        res.send(`
+          <html>
+          <head>
+            <title>Servidor Repaso</title>
+            <link rel="icon" href="/r_Imagenes/paisaje_verde_redondo.ico
+            " type="image/x-icon"><!-- Icono para la pestaña del navegador -->
+          </head>
+          <div style=
+          "display: flex; 
+          align-items: top; 
+          justify-content: center; 
+          height: 100vh; 
+          background-color: #f3f4f6;">
+            <h1 style="color: #4CAF50; font-size: 2em; text-align: center; font-family: Arial, sans-serif;">
+              Servidor "Repaso_backend" en funcionamiento
+            </h1>
+          </div>
+          </html>
+        `); // Al hacer un envio html con res.send podemos dar algunos estilos directamente en linea
       });
     }
+    
   
     listen() { // Levanta el servidor backend
       this.app.listen(this.port, () => {
@@ -30,5 +51,6 @@ class BackServer {
 
   }
   
-  module.exports = BackServer;
+  export default BackServer;
 
+  
